@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OFQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --glass:rgba(255,255,255,0.04);
+            --glass-hover:rgba(255,255,255,0.08);
+            --glass-border:rgba(255,255,255,0.06);
+            --glass-active:rgba(255,255,255,0.12);
+            --primary:#6C63FF;
+            --primary2:#FF6584;
+            --primary-glow:rgba(108,99,255,0.3);
+            --text:#fff;
+            --text2:rgba(255,255,255,0.5);
+            --radius:20px;
+            --shadow:0 8px 32px rgba(0,0,0,0.3);
+            --transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        body{
+            font-family:'Inter',system-ui,sans-serif;
+            background:#0a0a12;
+            color:var(--text);
+            min-height:100vh;
+            padding:12px;
+            position:relative;
+            overflow-x:hidden;
+        }
+
+        .bg-effects{
+            position:fixed;
+            inset:0;
+            z-index:0;
+            pointer-events:none;
+            overflow:hidden;
+        }
+        .bg-effects .orb{
+            position:absolute;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:0.12;
+            animation:floatOrb 25s ease-in-out infinite;
+        }
+        .bg-effects .orb:nth-child(1){
+            width:400px;height:400px;
+            background:var(--primary);
+            top:-150px;left:-150px;
+            animation-delay:0s;
+        }
+        .bg-effects .orb:nth-child(2){
+            width:500px;height:500px;
+            background:var(--primary2);
+            bottom:-200px;right:-200px;
+            animation-delay:-8s;
+        }
+        .bg-effects .orb:nth-child(3){
+            width:300px;height:300px;
+            background:var(--primary);
+            top:50%;left:50%;
+            animation-delay:-16s;
+        }
+        @keyframes floatOrb{
+            0%,100%{transform:translate(0,0) scale(1)}
+            25%{transform:translate(60px,-40px) scale(1.1)}
+            50%{transform:translate(-30px,50px) scale(0.9)}
+            75%{transform:translate(40px,30px) scale(1.05)}
+        }
+
+        .glass{
+            background:var(--glass);
+            backdrop-filter:blur(30px) saturate(1.4);
+            -webkit-backdrop-filter:blur(30px) saturate(1.4);
+            border:1px solid var(--glass-border);
+            border-radius:var(--radius);
+            box-shadow:var(--shadow);
+            transition:var(--transition);
+        }
+        .glass:hover{
+            background:var(--glass-hover);
+            border-color:rgba(255,255,255,0.1);
+            transform:translateY(-2px);
+        }
+        .glass-active{
+            background:var(--glass-active);
+            border-color:var(--primary);
+            box-shadow:0 8px 32px var(--primary-glow);
+        }
+
+        .container{max-width:480px;margin:0 auto;position:relative;z-index:1}
+        .hidden{display:none!important}
+
+        .nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:12px 16px;
+            margin-bottom:12px;
+            background:var(--glass);
+            backdrop-filter:blur(30px);
+            -webkit-backdrop-filter:blur(30px);
+            border:1px solid var(--glass-border);
+            border-radius:var(--radius);
+            animation:slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown{
+            from{opacity:0;transform:translateY(-20px)}
+            to{opacity:1;transform:translateY(0)}
+        }
+        .nav .logo{
+            font-size:20px;
+            font-weight:900;
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .nav .logo:hover{transform:scale(1.05)}
+        .nav .links{
+            display:flex;
+            gap:4px;
+            flex-wrap:wrap;
+        }
+        .nav .links button{
+            padding:6px 12px;
+            background:transparent;
+            border:none;
+            border-radius:10px;
+            color:var(--text2);
+            cursor:pointer;
+            font-size:13px;
+            font-weight:500;
+            font-family:inherit;
+            transition:var(--transition);
+            position:relative;
+        }
+        .nav .links button:hover{
+            color:var(--text);
+            background:var(--glass-hover);
+            transform:scale(1.05);
+        }
+        .nav .links button:active{transform:scale(0.95)}
+        .nav .links .active{
+            color:var(--text);
+            background:var(--glass-active);
+            border:1px solid var(--primary);
+        }
+        .nav .links #btnAuth{
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            color:#fff;
+            padding:6px 16px;
+            border:none;
+        }
+        .nav .links #btnAuth:hover{
+            transform:scale(1.05);
+            box-shadow:0 0 30px var(--primary-glow);
+        }
+        .nav .links #btnBlozda{
+            background:linear-gradient(135deg,#4A9BFF,#7C3AED);
+            color:#fff;
+            padding:6px 14px;
+            border:none;
+        }
+        .nav .links #btnAdmin{
+            background:linear-gradient(135deg,#ff6b35,#ff4444);
+            color:#fff;
+            padding:6px 14px;
+            border:none;
+        }
+
+        .auth-card{
+            padding:28px;
+            max-width:380px;
+            margin:40px auto;
+            animation:fadeInUp 0.6s ease-out;
+        }
+        @keyframes fadeInUp{
+            from{opacity:0;transform:translateY(30px) scale(0.95)}
+            to{opacity:1;transform:translateY(0) scale(1)}
+        }
+        .auth-card h2{
+            text-align:center;
+            font-size:24px;
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .auth-card p{
+            text-align:center;
+            color:var(--text2);
+            margin-bottom:16px;
+        }
+        .auth-card input{
+            width:100%;
+            padding:12px 16px;
+            margin:6px 0;
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--glass-border);
+            border-radius:12px;
+            color:var(--text);
+            font-size:14px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .auth-card input:focus{
+            outline:none;
+            border-color:var(--primary);
+            box-shadow:0 0 20px var(--primary-glow);
+        }
+        .auth-card button{
+            width:100%;
+            padding:12px;
+            margin:6px 0;
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            border:none;
+            border-radius:12px;
+            color:#fff;
+            font-size:15px;
+            font-weight:600;
+            cursor:pointer;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .auth-card button:hover{
+            transform:scale(1.02);
+            box-shadow:0 0 30px var(--primary-glow);
+        }
+        .auth-card button:active{transform:scale(0.98)}
+        .auth-links{
+            display:flex;
+            justify-content:space-between;
+            font-size:13px;
+            margin-top:8px;
+        }
+        .auth-links a{
+            color:var(--text2);
+            text-decoration:none;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .auth-links a:hover{color:var(--text)}
+        .file-label{
+            display:block;
+            padding:10px;
+            margin:6px 0;
+            background:rgba(255,255,255,0.03);
+            border:1px dashed var(--glass-border);
+            border-radius:10px;
+            text-align:center;
+            color:var(--text2);
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .file-label:hover{
+            border-color:var(--primary);
+            background:var(--glass-hover);
+        }
+        .file-label input{display:none}
+
+        .post{
+            padding:16px;
+            margin-bottom:12px;
+            animation:fadeInUp 0.4s ease-out;
+            transition:var(--transition);
+        }
+        .post:hover{transform:translateY(-2px)}
+        .post-header{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:8px;
+        }
+        .post-avatar{
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            object-fit:cover;
+            border:2px solid var(--primary);
+            transition:var(--transition);
+            cursor:pointer;
+        }
+        .post-avatar:hover{transform:scale(1.1)}
+        .post-username{
+            font-weight:600;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .post-username:hover{color:var(--primary)}
+        .post-text{
+            font-size:14px;
+            line-height:1.6;
+            margin:6px 0;
+            word-wrap:break-word;
+        }
+        .post-media{
+            max-width:100%;
+            max-height:400px;
+            border-radius:12px;
+            margin:6px 0;
+            object-fit:cover;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .post-media:hover{transform:scale(1.01)}
+        .post-actions{
+            display:flex;
+            gap:6px;
+            margin-top:10px;
+            padding-top:10px;
+            border-top:1px solid var(--glass-border);
+            flex-wrap:wrap;
+        }
+        .post-actions button{
+            padding:4px 12px;
+            background:rgba(255,255,255,0.03);
+            border:none;
+            border-radius:8px;
+            color:var(--text2);
+            cursor:pointer;
+            font-size:13px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .post-actions button:hover{
+            background:var(--glass-hover);
+            color:var(--text);
+            transform:scale(1.05);
+        }
+        .post-actions button:active{transform:scale(0.95)}
+        .post-actions .liked{color:var(--primary2)}
+        .post-actions .danger{color:#ff4444}
+        .post-actions .pinned{color:#ffd700}
+
+        .profile-card{
+            padding:24px;
+            text-align:center;
+            margin-bottom:12px;
+            animation:fadeInUp 0.5s ease-out;
+        }
+        .profile-banner{
+            width:100%;
+            height:120px;
+            object-fit:cover;
+            border-radius:16px 16px 0 0;
+            margin:-24px -24px 0 -24px;
+            width:calc(100% + 48px);
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+        }
+        .profile-avatar{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            object-fit:cover;
+            border:3px solid var(--primary);
+            margin-top:-40px;
+            margin-bottom:8px;
+            transition:var(--transition);
+        }
+        .profile-avatar:hover{transform:scale(1.05)}
+        .profile-name{
+            font-size:20px;
+            font-weight:700;
+        }
+        .profile-bio{
+            color:var(--text2);
+            margin:4px 0 8px;
+        }
+        .profile-stats{
+            display:flex;
+            justify-content:center;
+            gap:24px;
+            color:var(--text2);
+            font-size:13px;
+            margin:8px 0;
+        }
+        .profile-stats strong{
+            color:var(--text);
+            font-size:18px;
+            display:block;
+        }
+        .profile-actions{
+            display:flex;
+            gap:8px;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin:8px 0;
+        }
+        .follow-btn{
+            padding:8px 24px;
+            border:none;
+            border-radius:10px;
+            font-weight:600;
+            cursor:pointer;
+            font-size:14px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .follow-btn:hover{transform:scale(1.05)}
+        .follow-btn.follow{
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            color:#fff;
+        }
+        .follow-btn.unfollow{
+            background:rgba(255,255,255,0.06);
+            color:var(--text);
+            border:1px solid var(--glass-border);
+        }
+        .block-btn{
+            padding:8px 24px;
+            border:none;
+            border-radius:10px;
+            font-weight:600;
+            cursor:pointer;
+            font-size:14px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .block-btn:hover{transform:scale(1.05)}
+        .block-btn.block{
+            background:#ff4444;
+            color:#fff;
+        }
+        .block-btn.unblock{
+            background:#4CAF50;
+            color:#fff;
+        }
+
+        .create-card{padding:20px;animation:fadeInUp 0.4s ease-out}
+        .create-card h2{font-size:18px;margin-bottom:12px}
+        .create-card textarea{
+            width:100%;
+            padding:12px;
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--glass-border);
+            border-radius:12px;
+            color:var(--text);
+            font-size:14px;
+            font-family:inherit;
+            resize:vertical;
+            min-height:80px;
+            transition:var(--transition);
+        }
+        .create-card textarea:focus{
+            outline:none;
+            border-color:var(--primary);
+            box-shadow:0 0 20px var(--primary-glow);
+        }
+        .create-card .btn-primary{
+            width:100%;
+            padding:12px;
+            margin-top:8px;
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            border:none;
+            border-radius:12px;
+            color:#fff;
+            font-size:15px;
+            font-weight:600;
+            cursor:pointer;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .create-card .btn-primary:hover{
+            transform:scale(1.02);
+            box-shadow:0 0 30px var(--primary-glow);
+        }
+        .drop-zone{
+            border:2px dashed var(--glass-border);
+            border-radius:12px;
+            padding:20px;
+            text-align:center;
+            margin-bottom:10px;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+        .drop-zone:hover{
+            border-color:var(--primary);
+            background:var(--glass-hover);
+        }
+        .drop-zone.dragover{
+            border-color:var(--primary);
+            background:var(--glass-active);
+            transform:scale(1.02);
+        }
+        .drop-zone .icon{font-size:32px}
+
+        .modal{
+            position:fixed;
+            inset:0;
+            display:none;
+            justify-content:center;
+            align-items:center;
+            z-index:200;
+            background:rgba(0,0,0,0.7);
+            backdrop-filter:blur(20px);
+            -webkit-backdrop-filter:blur(20px);
+            padding:16px;
+            animation:fadeIn 0.3s ease-out;
+        }
+        .modal.active{display:flex}
+        @keyframes fadeIn{
+            from{opacity:0}
+            to{opacity:1}
+        }
+        .modal-box{
+            background:rgba(20,20,31,0.95);
+            backdrop-filter:blur(40px);
+            -webkit-backdrop-filter:blur(40px);
+            border:1px solid var(--glass-border);
+            border-radius:20px;
+            max-width:440px;
+            width:100%;
+            max-height:80vh;
+            padding:20px;
+            overflow-y:auto;
+            animation:modalIn 0.3s ease-out;
+        }
+        @keyframes modalIn{
+            from{opacity:0;transform:scale(0.9) translateY(20px)}
+            to{opacity:1;transform:scale(1) translateY(0)}
+        }
+        .modal-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:12px;
+        }
+        .close-btn{
+            background:none;
+            border:none;
+            color:var(--text2);
+            font-size:22px;
+            cursor:pointer;
+            transition:var(--transition);
+            font-family:inherit;
+        }
+        .close-btn:hover{
+            color:var(--text);
+            transform:rotate(90deg);
+        }
+
+        .comment-item{
+            display:flex;
+            gap:10px;
+            padding:6px 0;
+            border-bottom:1px solid var(--glass-border);
+            animation:fadeInUp 0.3s ease-out;
+        }
+        .comment-item img{
+            width:28px;
+            height:28px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+        .comment-item .text{font-size:13px;word-wrap:break-word}
+        .comment-item .name{font-weight:600;font-size:13px;margin-right:6px}
+        .comment-input{
+            display:flex;
+            gap:8px;
+            margin-top:8px;
+            flex-wrap:wrap;
+        }
+        .comment-input input{
+            flex:1;
+            padding:8px 12px;
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--glass-border);
+            border-radius:8px;
+            color:var(--text);
+            font-size:13px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .comment-input input:focus{
+            outline:none;
+            border-color:var(--primary);
+        }
+        .comment-input .btn-primary{
+            padding:8px 16px;
+            background:linear-gradient(135deg,var(--primary),var(--primary2));
+            border:none;
+            border-radius:8px;
+            color:#fff;
+            font-size:13px;
+            font-weight:600;
+            cursor:pointer;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+
+        .admin-stats{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:8px;
+            margin-bottom:12px;
+        }
+        .stat-card{
+            background:var(--glass);
+            border-radius:12px;
+            padding:12px;
+            text-align:center;
+            transition:var(--transition);
+        }
+        .stat-card:hover{
+            background:var(--glass-hover);
+            transform:scale(1.02);
+        }
+        .stat-card .num{
+            font-size:20px;
+            font-weight:700;
+            color:var(--primary);
+        }
+        .stat-card .label{font-size:11px;color:var(--text2)}
+        .admin-tabs{
+            display:flex;
+            gap:6px;
+            margin-bottom:12px;
+            flex-wrap:wrap;
+        }
+        .admin-tabs .tab-btn{
+            padding:6px 14px;
+            background:rgba(255,255,255,0.03);
+            border:1px solid var(--glass-border);
+            border-radius:8px;
+            color:var(--text2);
+            cursor:pointer;
+            font-size:13px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .admin-tabs .tab-btn:hover{
+            background:var(--glass-hover);
+            color:var(--text);
+        }
+        .admin-tabs .tab-btn.active{
+            background:var(--glass-active);
+            border-color:var(--primary);
+            color:var(--text);
+        }
+        .admin-item{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:8px;
+            border-bottom:1px solid var(--glass-border);
+            animation:fadeInUp 0.3s ease-out;
+        }
+        .admin-item img{
+            width:32px;
+            height:32px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+        .admin-item .info{flex:1}
+        .admin-item .info .name{
+            font-weight:600;
+            font-size:13px;
+        }
+        .admin-item .info .sub{
+            font-size:12px;
+            color:var(--text2);
+        }
+        .admin-item .actions{
+            display:flex;
+            gap:4px;
+            flex-wrap:wrap;
+        }
+        .admin-item .actions button{
+            padding:4px 10px;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:11px;
+            font-weight:600;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .admin-item .actions button:hover{transform:scale(1.05)}
+        .verify-btn{background:var(--primary);color:#fff}
+        .verify-btn.done{background:#00c853}
+        .ban-btn{background:#ff4444;color:#fff}
+        .ban-btn.unban{background:#ffa500;color:#fff}
+        .del-btn{background:#ff4444;color:#fff}
+
+        .report-item{
+            border:1px solid rgba(255,68,68,0.2);
+            border-radius:12px;
+            padding:12px;
+            margin-bottom:10px;
+            background:rgba(255,68,68,0.05);
+            animation:fadeInUp 0.3s ease-out;
+        }
+        .report-item .actions{
+            display:flex;
+            gap:8px;
+            margin-top:8px;
+            flex-wrap:wrap;
+        }
+        .report-item .actions button{
+            padding:6px 16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:13px;
+            font-weight:600;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .report-item .actions button:hover{transform:scale(1.05)}
+        .report-item .actions .delete-btn{background:#ff4444;color:#fff}
+        .report-item .actions .ignore-btn{background:var(--glass);color:var(--text)}
+
+        .admin-card{padding:20px}
+        .admin-card h2{font-size:18px;margin-bottom:12px}
+
+        .settings-item{margin:10px 0}
+        .settings-item label{
+            display:block;
+            color:var(--text2);
+            font-size:12px;
+            margin-bottom:3px;
+        }
+        .settings-item input{
+            width:100%;
+            padding:8px 12px;
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--glass-border);
+            border-radius:8px;
+            color:var(--text);
+            font-size:13px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .settings-item input:focus{
+            outline:none;
+            border-color:var(--primary);
+        }
+        .settings-section{
+            margin:12px 0;
+            padding:12px;
+            background:var(--glass);
+            border-radius:12px;
+            border:1px solid var(--glass-border);
+        }
+        .settings-section h4{
+            font-size:14px;
+            margin-bottom:8px;
+            color:var(--text2);
+        }
+        .logout-btn{
+            width:100%;
+            padding:10px;
+            background:#ff4444;
+            border:none;
+            border-radius:10px;
+            color:#fff;
+            font-size:15px;
+            font-weight:600;
+            cursor:pointer;
+            font-family:inherit;
+            margin-top:10px;
+            transition:var(--transition);
+        }
+        .logout-btn:hover{transform:scale(1.02)}
+        .delete-account-btn{
+            width:100%;
+            padding:10px;
+            background:transparent;
+            border:1px solid #ff4444;
+            border-radius:10px;
+            color:#ff4444;
+            font-size:14px;
+            font-weight:600;
+            cursor:pointer;
+            font-family:inherit;
+            margin-top:6px;
+            transition:var(--transition);
+        }
+        .delete-account-btn:hover{
+            background:#ff4444;
+            color:#fff;
+        }
+
+        .v-badge{
+            display:inline-block;
+            background:var(--primary);
+            border-radius:50%;
+            width:18px;
+            height:18px;
+            font-size:10px;
+            line-height:18px;
+            text-align:center;
+            margin-left:4px;
+        }
+        .a-badge{
+            display:inline-block;
+            background:#ff4444;
+            border-radius:10px;
+            padding:0 8px;
+            font-size:10px;
+            font-weight:700;
+            margin-left:4px;
+        }
+        .pinned-badge{
+            display:inline-block;
+            background:#ffd700;
+            border-radius:10px;
+            padding:0 8px;
+            font-size:10px;
+            font-weight:700;
+            color:#000;
+            margin-left:4px;
+        }
+
+        .toast{
+            position:fixed;
+            bottom:80px;
+            left:50%;
+            transform:translateX(-50%) translateY(20px);
+            background:rgba(0,0,0,0.85);
+            backdrop-filter:blur(20px);
+            color:#fff;
+            padding:12px 24px;
+            border-radius:16px;
+            font-size:14px;
+            z-index:999;
+            transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+            border:1px solid rgba(255,255,255,0.1);
+            max-width:90%;
+            text-align:center;
+            font-family:'Inter',sans-serif;
+            opacity:0;
+        }
+        .toast.show{
+            opacity:1;
+            transform:translateX(-50%) translateY(0);
+        }
+
+        .page-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:12px;
+        }
+        .page-header h2{
+            font-size:18px;
+            font-weight:700;
+        }
+        .refresh{
+            padding:6px 12px;
+            background:var(--glass);
+            border:1px solid var(--glass-border);
+            border-radius:8px;
+            color:var(--text2);
+            cursor:pointer;
+            font-size:16px;
+            font-family:inherit;
+            transition:var(--transition);
+        }
+        .refresh:hover{
+            background:var(--glass-hover);
+            color:var(--text);
+            transform:rotate(180deg);
+        }
+
+        @media(max-width:480px){
+            body{padding:8px}
+            .container{max-width:100%}
+            .nav{padding:8px 12px}
+            .nav .logo{font-size:17px}
+            .nav .links button{font-size:12px;padding:4px 10px}
+            .post{padding:12px}
+            .auth-card{padding:20px;margin:20px 0}
+            .modal-box{padding:16px}
+            .admin-stats{grid-template-columns:1fr 1fr}
+            .profile-stats{gap:16px}
+            .profile-stats strong{font-size:16px}
+            .profile-banner{height:80px}
+            .profile-avatar{width:64px;height:64px;margin-top:-32px}
+            .profile-actions{flex-direction:column;align-items:center}
+        }
+
+        @media(min-width:768px){
+            .container{max-width:600px}
+        }
+
+        ::-webkit-scrollbar{width:4px;height:4px}
+        ::-webkit-scrollbar-track{background:transparent}
+        ::-webkit-scrollbar-thumb{background:var(--glass-border);border-radius:10px}
+        ::-webkit-scrollbar-thumb:hover{background:var(--text2)}
+    </style>
+</head>
+<body>
+
+<div class="bg-effects">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+</div>
+
+<div class="container">
+
+<div class="nav" id="navBar">
+    <div class="logo" onclick="window.location.reload()">OFQ</div>
+    <div class="links" id="navLinks">
+        <button class="active" onclick="showFeed()" id="btnFeed">🏠</button>
+        <button onclick="showCreate()" id="btnCreate">✏️</button>
+        <button onclick="showProfile()" id="btnProfile">👤</button>
+        <button onclick="showAdmin()" id="btnAdmin" class="hidden">👑</button>
+        <button onclick="openBlozda()" id="btnBlozda">💬</button>
+        <button onclick="toggleAuth()" id="btnAuth">🔐</button>
+    </div>
+</div>
+
+<div id="authBox">
+    <div class="auth-card glass">
+        <h2 id="authTitle">Добро пожаловать</h2>
+        <p id="authSub">Войдите в аккаунт</p>
+        <div id="regFields" class="hidden">
+            <input type="text" id="regUsername" placeholder="Имя пользователя">
+            <input type="file" id="regAvatar" accept="image/*">
+            <label for="regAvatar" class="file-label">📸 Аватар</label>
+            <input type="file" id="regBanner" accept="image/*">
+            <label for="regBanner" class="file-label">🖼️ Баннер</label>
+        </div>
+        <input type="email" id="authEmail" placeholder="Email">
+        <input type="password" id="authPassword" placeholder="Пароль">
+        <button onclick="handleAuth()" id="authBtnAction">Войти</button>
+        <div class="auth-links">
+            <a href="#" onclick="toggleMode()" id="toggleLink">Зарегистрироваться</a>
+            <a href="#" onclick="forgotPassword()">Забыли пароль?</a>
+        </div>
+    </div>
+</div>
+
+<div id="appBox" class="hidden">
+
+    <div id="feedPage">
+        <div class="page-header">
+            <h2>📸 Лента</h2>
+            <button onclick="loadFeed()" class="refresh">🔄</button>
+        </div>
+        <div id="postsList"></div>
+    </div>
+
+    <div id="createPage" class="hidden">
+        <div class="create-card glass">
+            <h2>✏️ Новый пост</h2>
+            <div class="drop-zone" id="dropZone" 
+                 ondragover="event.preventDefault();this.classList.add('dragover')" 
+                 ondrop="event.preventDefault();handleDrop(event)"
+                 onclick="document.getElementById('postMedia').click()">
+                <div class="icon">📁</div>
+                <p style="color:var(--text2);font-size:13px;">
+                    📸 Нажмите чтобы выбрать<br>
+                    или перетащите фото/видео<br>
+                    или вставьте из буфера (Ctrl+V)
+                </p>
+                <input type="file" id="postMedia" accept="image/*,video/*" style="display:none" 
+                       onchange="handleFile(this)">
+            </div>
+            <div id="previewBox" class="hidden" style="position:relative;margin:6px 0;">
+                <img id="previewImg" style="max-width:100%;max-height:180px;border-radius:10px;object-fit:cover;">
+                <button onclick="removeMedia()" style="position:absolute;top:4px;right:4px;background:rgba(0,0,0,0.7);border:none;border-radius:50%;color:#fff;width:24px;height:24px;cursor:pointer;font-size:12px;transition:var(--transition);">✕</button>
+            </div>
+            <textarea id="postText" rows="3" placeholder="Что у вас нового?"></textarea>
+            <button onclick="createPost()" class="btn-primary">🚀 Опубликовать</button>
+        </div>
+    </div>
+
+    <div id="profilePage" class="hidden"><div id="profileContent"></div></div>
+
+    <div id="adminPage" class="hidden">
+        <div class="admin-card glass">
+            <h2>👑 Админ-панель</h2>
+            <div id="adminStats" class="admin-stats"></div>
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="adminTab('reports')">📢 Жалобы</button>
+                <button class="tab-btn" onclick="adminTab('reports-user')">👤 Жалобы на пользователей</button>
+                <button class="tab-btn" onclick="adminTab('users')">👥 Пользователи</button>
+                <button class="tab-btn" onclick="adminTab('posts')">📸 Посты</button>
+            </div>
+            <div id="adminContent"></div>
+        </div>
+    </div>
+
+    <div id="commentModal" class="modal">
+        <div class="modal-box glass">
+            <div class="modal-header">
+                <h3>💬 Комментарии</h3>
+                <button onclick="closeComments()" class="close-btn">✕</button>
+            </div>
+            <div id="commentsList"></div>
+            <div class="comment-input">
+                <input type="text" id="commentText" placeholder="Написать...">
+                <button onclick="addComment()" class="btn-primary">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-box glass">
+            <div class="modal-header">
+                <h3>⚙️ Настройки</h3>
+                <button onclick="closeSettings()" class="close-btn">✕</button>
+            </div>
+            <div id="settingsContent"></div>
+        </div>
+    </div>
+
+    <div id="forwardModal" class="modal">
+        <div class="modal-box glass">
+            <div class="modal-header">
+                <h3>📤 Переслать пост</h3>
+                <button onclick="closeForward()" class="close-btn">✕</button>
+            </div>
+            <div id="forwardList">
+                <p style="color:var(--text2);margin-bottom:12px;">Выберите друга для пересылки</p>
+                <div id="forwardUsers"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+</div>
+
+<script>
+let user = null;
+let token = localStorage.getItem('token');
+let isLogin = true;
+let currentPostId = null;
+let isPosting = false;
+let isCommenting = false;
+let selectedFile = null;
+let forwardPostId = null;
+
+document.addEventListener('DOMContentLoaded', function(){
+    if(token) checkAuth();
+    document.getElementById('postMedia').addEventListener('change', function(e){
+        if(this.files.length) handleFile(this);
+    });
+});
+
+function showToast(text, duration = 3000){
+    const toast = document.getElementById('toast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toast._hide);
+    toast._hide = setTimeout(() => {
+        toast.classList.remove('show');
+    }, duration);
+}
+
+function openBlozda(){
+    if(user){
+        window.location.href = '/blozda';
+    } else {
+        showToast('🔐 Войдите в аккаунт');
+    }
+}
+
+async function checkAuth(){
+    try{
+        const res = await fetch('/api/me', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            const data = await res.json();
+            user = data.user;
+            document.getElementById('btnAuth').textContent = '👤 ' + user.username;
+            document.getElementById('btnAuth').onclick = () => openSettings();
+            document.getElementById('authBox').classList.add('hidden');
+            document.getElementById('appBox').classList.remove('hidden');
+            loadFeed();
+            if(user.isAdmin){
+                document.getElementById('btnAdmin').classList.remove('hidden');
+            }
+        }else if(res.status === 403){
+            const data = await res.json();
+            if(data.banned){
+                showToast('🚫 ' + (data.error || 'Вы забанены'));
+                localStorage.removeItem('token');
+                token = null;
+                showAuth();
+            }
+        }else{
+            localStorage.removeItem('token');
+            token = null;
+            showAuth();
+        }
+    }catch(e){
+        showAuth();
+    }
+}
+
+function showAuth(){
+    document.getElementById('authBox').classList.remove('hidden');
+    document.getElementById('appBox').classList.add('hidden');
+    document.getElementById('btnAuth').textContent = '🔐 Войти';
+    document.getElementById('btnAuth').onclick = toggleAuth;
+}
+
+function toggleAuth(){
+    if(user){
+        openSettings();
+    }else{
+        document.getElementById('authBox').classList.toggle('hidden');
+    }
+}
+
+function toggleMode(){
+    isLogin = !isLogin;
+    document.getElementById('authTitle').textContent = isLogin ? 'Добро пожаловать' : 'Создать аккаунт';
+    document.getElementById('authSub').textContent = isLogin ? 'Войдите в аккаунт' : 'Присоединяйтесь к OFQ';
+    document.getElementById('authBtnAction').textContent = isLogin ? 'Войти' : 'Зарегистрироваться';
+    document.getElementById('toggleLink').textContent = isLogin ? 'Зарегистрироваться' : 'Войти';
+    document.getElementById('regFields').classList.toggle('hidden', isLogin);
+}
+
+async function handleAuth(){
+    const email = document.getElementById('authEmail').value;
+    const pass = document.getElementById('authPassword').value;
+    if(!email || !pass) return showToast('❌ Заполните все поля!');
+    
+    if(isLogin){
+        try{
+            const res = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password: pass }),
+                credentials: 'include'
+            });
+            const data = await res.json();
+            if(res.ok){
+                token = data.token;
+                localStorage.setItem('token', token);
+                user = data.user;
+                document.getElementById('btnAuth').textContent = '👤 ' + user.username;
+                document.getElementById('btnAuth').onclick = () => openSettings();
+                document.getElementById('authBox').classList.add('hidden');
+                document.getElementById('appBox').classList.remove('hidden');
+                loadFeed();
+                if(user.isAdmin){
+                    document.getElementById('btnAdmin').classList.remove('hidden');
+                }
+                showToast('✅ Добро пожаловать, ' + user.username + '!');
+            }else{
+                showToast('❌ ' + (data.error || 'Ошибка входа'));
+            }
+        }catch(e){
+            showToast('❌ Ошибка соединения');
+        }
+    }else{
+        const username = document.getElementById('regUsername').value;
+        const avatar = document.getElementById('regAvatar').files[0];
+        const banner = document.getElementById('regBanner').files[0];
+        if(!username) return showToast('❌ Введите имя');
+        const fd = new FormData();
+        fd.append('username', username);
+        fd.append('email', email);
+        fd.append('password', pass);
+        if(avatar) fd.append('avatar', avatar);
+        if(banner) fd.append('banner', banner);
+        try{
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                body: fd,
+                credentials: 'include'
+            });
+            const data = await res.json();
+            if(res.ok){
+                token = data.token;
+                localStorage.setItem('token', token);
+                user = data.user;
+                document.getElementById('btnAuth').textContent = '👤 ' + user.username;
+                document.getElementById('btnAuth').onclick = () => openSettings();
+                document.getElementById('authBox').classList.add('hidden');
+                document.getElementById('appBox').classList.remove('hidden');
+                loadFeed();
+                showToast('✅ Аккаунт создан!');
+            }else{
+                showToast('❌ ' + (data.error || 'Ошибка регистрации'));
+            }
+        }catch(e){
+            showToast('❌ Ошибка соединения');
+        }
+    }
+}
+
+async function forgotPassword(){
+    const email = prompt('Введите email:');
+    if(!email) return;
+    try{
+        const res = await fetch('/api/forgot-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+        showToast(res.ok ? '✅ Инструкции отправлены на email' : '❌ ' + data.error);
+    }catch(e){}
+}
+
+async function logout(){
+    await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+    localStorage.removeItem('token');
+    token = null;
+    user = null;
+    showAuth();
+    document.getElementById('btnAuth').textContent = '🔐 Войти';
+    document.getElementById('btnAuth').onclick = toggleAuth;
+    document.getElementById('btnAdmin').classList.add('hidden');
+    closeSettings();
+    showToast('👋 Вы вышли');
+}
+
+async function loadFeed(){
+    if(!user) return;
+    try{
+        const res = await fetch('/api/posts', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const posts = await res.json();
+        const container = document.getElementById('postsList');
+        if(!posts || !posts.length){
+            container.innerHTML = '<div class="glass" style="text-align:center;padding:30px;color:var(--text2);">📸 Нет постов</div>';
+            return;
+        }
+        container.innerHTML = posts.map(p => `
+            <div class="post glass">
+                <div class="post-header">
+                    <img src="${p.userAvatar || '/default-avatar.png'}" class="post-avatar" onerror="this.src='/default-avatar.png'" onclick="viewProfile('${p.userId}')">
+                    <span class="post-username" onclick="viewProfile('${p.userId}')">${p.username}${p.isVerified ? '<span class="v-badge">✓</span>' : ''}${p.isAdmin ? '<span class="a-badge">ADMIN</span>' : ''}${p.isPinned ? '<span class="pinned-badge">📌</span>' : ''}</span>
+                </div>
+                ${p.text ? `<div class="post-text">${p.text}</div>` : ''}
+                ${p.mediaType === 'image' ? `<img src="${p.media}" class="post-media" onclick="window.open('${p.media}')">` : ''}
+                ${p.mediaType === 'video' ? `<video src="${p.media}" class="post-media" controls></video>` : ''}
+                <div class="post-actions">
+                    <button onclick="likePost('${p.id}')" class="${p.isLiked ? 'liked' : ''}">❤️ ${p.likesCount || 0}</button>
+                    <button onclick="openComments('${p.id}')">💬 ${p.commentsCount || 0}</button>
+                    <button onclick="repostPost('${p.id}')">🔄</button>
+                    <button onclick="forwardPost('${p.id}')">📤</button>
+                    ${p.userId === user.id ? `<button onclick="pinPost('${p.id}')" class="${p.isPinned ? 'pinned' : ''}">📌</button>` : ''}
+                    ${p.userId === user.id || user.isAdmin ? `<button onclick="deletePost('${p.id}')" class="danger">🗑️</button>` : `<button onclick="reportPost('${p.id}')" class="danger">📢</button>`}
+                </div>
+            </div>
+        `).join('');
+    }catch(e){
+        console.error('Ошибка загрузки ленты:', e);
+    }
+}
+
+async function likePost(id){
+    try{
+        await fetch('/api/posts/' + id + '/like', {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        loadFeed();
+    }catch(e){}
+}
+
+async function repostPost(id){
+    try{
+        const res = await fetch('/api/posts/' + id + '/repost', {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            showToast('✅ Репост создан');
+            loadFeed();
+        }
+    }catch(e){}
+}
+
+async function pinPost(id){
+    try{
+        const res = await fetch('/api/pin/' + id, {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            const data = await res.json();
+            showToast(data.pinned ? '📌 Пост закреплен' : '📌 Пост откреплен');
+            loadFeed();
+        }
+    }catch(e){}
+}
+
+async function deletePost(id){
+    if(!confirm('Удалить пост?')) return;
+    try{
+        await fetch('/api/posts/' + id, {
+            method: 'DELETE',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        loadFeed();
+        showToast('🗑️ Пост удален');
+    }catch(e){}
+}
+
+async function reportPost(id){
+    const reason = prompt('Причина жалобы:');
+    if(!reason) return;
+    try{
+        const res = await fetch('/api/report/' + id, {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ reason })
+        });
+        if(res.ok){
+            showToast('✅ Жалоба отправлена');
+        }else if(res.status === 400){
+            showToast('⚠️ Вы уже жаловались');
+        }else{
+            showToast('❌ Ошибка');
+        }
+    }catch(e){}
+}
+
+function forwardPost(id){
+    forwardPostId = id;
+    document.getElementById('forwardModal').classList.add('active');
+    loadForwardUsers();
+}
+
+function closeForward(){
+    document.getElementById('forwardModal').classList.remove('active');
+}
+
+async function loadForwardUsers(){
+    try{
+        const res = await fetch('/api/blozda/following', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const users = await res.json();
+        const container = document.getElementById('forwardUsers');
+        if(!users || !users.length){
+            container.innerHTML = '<p style="color:var(--text2);">😔 Нет друзей для пересылки</p>';
+            return;
+        }
+        container.innerHTML = users.map(u => `
+            <div class="glass" style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;cursor:pointer;transition:var(--transition);margin-bottom:6px;" onclick="sendForward('${u.id}')">
+                <img src="${u.avatar || '/default-avatar.png'}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+                <div>
+                    <div style="font-weight:600;">${u.username}</div>
+                    <div style="font-size:12px;color:var(--text2);">Нажмите чтобы переслать</div>
+                </div>
+            </div>
+        `).join('');
+    }catch(e){
+        console.error('Ошибка загрузки пользователей:', e);
+    }
+}
+
+async function sendForward(toId){
+    try{
+        const res = await fetch('/api/forward-post', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ postId: forwardPostId, toId })
+        });
+        if(res.ok){
+            showToast('✅ Пост переслан!');
+            closeForward();
+        }else{
+            const data = await res.json();
+            showToast('❌ ' + (data.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function openComments(id){
+    currentPostId = id;
+    document.getElementById('commentModal').classList.add('active');
+    try{
+        const res = await fetch('/api/posts/' + id + '/comments', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const comments = await res.json();
+        document.getElementById('commentsList').innerHTML = comments.map(c => `
+            <div class="comment-item">
+                <img src="${c.userAvatar || '/default-avatar.png'}" onerror="this.src='/default-avatar.png'">
+                <div>
+                    <span class="name">${c.username}</span>
+                    <span class="text">${c.text || ''}</span>
+                    ${c.fileType === 'image' ? `<img src="${c.file}" style="max-width:100px;border-radius:6px;margin-top:4px;cursor:pointer;" onclick="window.open('${c.file}')">` : ''}
+                    ${c.fileType === 'video' ? `<video src="${c.file}" style="max-width:100px;border-radius:6px;margin-top:4px;" controls></video>` : ''}
+                    ${c.fileType === 'audio' ? `<audio src="${c.file}" style="width:100px;margin-top:4px;" controls></audio>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }catch(e){}
+}
+
+function closeComments(){
+    document.getElementById('commentModal').classList.remove('active');
+}
+
+async function addComment(){
+    if(isCommenting) return;
+    const text = document.getElementById('commentText').value;
+    if(!text.trim()) return;
+    isCommenting = true;
+    try{
+        await fetch('/api/posts/' + currentPostId + '/comment', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ text })
+        });
+        document.getElementById('commentText').value = '';
+        openComments(currentPostId);
+        loadFeed();
+    }catch(e){}
+    isCommenting = false;
+}
+
+document.getElementById('commentText').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') addComment();
+});
+
+function handleDrop(event){
+    event.preventDefault();
+    document.getElementById('dropZone').classList.remove('dragover');
+    const files = event.dataTransfer.files;
+    if(files.length > 0){
+        const file = files[0];
+        if(file.type.startsWith('image/') || file.type.startsWith('video/')){
+            const input = document.getElementById('postMedia');
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            input.files = dt.files;
+            handleFile(input);
+        }else{
+            showToast('❌ Поддерживаются только изображения и видео');
+        }
+    }
+}
+
+function handleFile(input){
+    const file = input.files[0];
+    if(!file) return;
+    selectedFile = file;
+    const preview = document.getElementById('previewBox');
+    const img = document.getElementById('previewImg');
+    const reader = new FileReader();
+    reader.onload = function(e){
+        img.src = e.target.result;
+        preview.classList.remove('hidden');
+    };
+    reader.readAsDataURL(file);
+}
+
+function removeMedia(){
+    selectedFile = null;
+    document.getElementById('previewBox').classList.add('hidden');
+    document.getElementById('postMedia').value = '';
+}
+
+document.addEventListener('paste', function(e){
+    if(document.getElementById('createPage').classList.contains('hidden')) return;
+    const items = e.clipboardData.items;
+    for(let item of items){
+        if(item.type.startsWith('image/')){
+            const file = item.getAsFile();
+            const input = document.getElementById('postMedia');
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            input.files = dt.files;
+            handleFile(input);
+            showToast('📸 Изображение вставлено из буфера');
+            break;
+        }
+    }
+});
+
+async function createPost(){
+    if(isPosting) return;
+    const text = document.getElementById('postText').value;
+    const file = selectedFile;
+    if(!text.trim() && !file) return showToast('❌ Введите текст или выберите файл!');
+    const fd = new FormData();
+    fd.append('text', text);
+    fd.append('type', file ? 'image' : 'text');
+    if(file) fd.append('media', file);
+    isPosting = true;
+    try{
+        const res = await fetch('/api/posts', {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include',
+            body: fd
+        });
+        if(res.ok){
+            document.getElementById('postText').value = '';
+            removeMedia();
+            showFeed();
+            loadFeed();
+            showToast('✅ Пост опубликован!');
+        }else{
+            const d = await res.json();
+            showToast('❌ ' + (d.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+    isPosting = false;
+}
+
+function showFeed(){
+    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('btnFeed').classList.add('active');
+    document.getElementById('feedPage').classList.remove('hidden');
+    document.getElementById('createPage').classList.add('hidden');
+    document.getElementById('profilePage').classList.add('hidden');
+    document.getElementById('adminPage').classList.add('hidden');
+    loadFeed();
+}
+
+function showCreate(){
+    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('btnCreate').classList.add('active');
+    document.getElementById('feedPage').classList.add('hidden');
+    document.getElementById('createPage').classList.remove('hidden');
+    document.getElementById('profilePage').classList.add('hidden');
+    document.getElementById('adminPage').classList.add('hidden');
+}
+
+async function showProfile(){
+    if(!user) return;
+    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('btnProfile').classList.add('active');
+    document.getElementById('feedPage').classList.add('hidden');
+    document.getElementById('createPage').classList.add('hidden');
+    document.getElementById('profilePage').classList.remove('hidden');
+    document.getElementById('adminPage').classList.add('hidden');
+    await loadProfile(user.id);
+}
+
+async function loadProfile(id){
+    try{
+        const u = await (await fetch('/api/users/' + id, {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        })).json();
+        const posts = await (await fetch('/api/users/' + id + '/posts', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        })).json();
+        const isOwn = id === user.id;
+        
+        let actions = '';
+        if(!isOwn){
+            actions += `<button onclick="toggleFollow('${id}')" class="follow-btn ${u.isFollowing ? 'unfollow' : 'follow'}">${u.isFollowing ? '❌ Отписаться' : '➕ Подписаться'}</button>`;
+            actions += `<button onclick="toggleBlock('${id}')" class="block-btn ${u.isBlocked ? 'unblock' : 'block'}">${u.isBlocked ? '🔓 Разблокировать' : '🔒 Заблокировать'}</button>`;
+            actions += `<button onclick="reportUser('${id}')" class="delete-account-btn" style="margin-top:6px;padding:6px 16px;font-size:13px;">📢 Пожаловаться</button>`;
+        } else {
+            actions += `<button onclick="openSettings()" class="follow-btn follow">⚙️ Настройки</button>`;
+        }
+        
+        document.getElementById('profileContent').innerHTML = `
+            <div class="profile-card glass">
+                <img src="${u.banner || '/default-banner.png'}" class="profile-banner" onerror="this.src='/default-banner.png'">
+                <img src="${u.avatar || '/default-avatar.png'}" class="profile-avatar" onerror="this.src='/default-avatar.png'">
+                <div class="profile-name">${u.username}${u.isVerified ? '<span class="v-badge">✓</span>' : ''}${u.isAdmin ? '<span class="a-badge">ADMIN</span>' : ''}</div>
+                <div class="profile-bio">${u.bio || 'Пользователь OFQ'}</div>
+                <div class="profile-actions">${actions}</div>
+                <div class="profile-stats">
+                    <span><strong>${posts.length}</strong> постов</span>
+                    <span><strong>${u.followers || 0}</strong> подписчиков</span>
+                    <span><strong>${u.following || 0}</strong> подписок</span>
+                </div>
+            </div>
+            ${posts.length > 0 ? posts.map(p => `
+                <div class="post glass">
+                    ${p.text ? `<div class="post-text">${p.text}</div>` : ''}
+                    ${p.mediaType === 'image' ? `<img src="${p.media}" class="post-media">` : ''}
+                    ${p.mediaType === 'video' ? `<video src="${p.media}" class="post-media" controls></video>` : ''}
+                    <div class="post-actions"><span>❤️ ${p.likesCount || 0}</span><span>💬 ${p.commentsCount || 0}</span></div>
+                </div>
+            `).join('') : '<div class="glass" style="text-align:center;padding:20px;color:var(--text2);">📸 Нет постов</div>'}
+        `;
+    }catch(e){}
+}
+
+function viewProfile(id){
+    showProfile();
+    loadProfile(id);
+}
+
+async function toggleFollow(id){
+    try{
+        const res = await fetch('/api/follow/' + id, {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            loadProfile(id);
+            loadFeed();
+        }else{
+            const d = await res.json();
+            showToast('❌ ' + (d.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function toggleBlock(id){
+    try{
+        const res = await fetch('/api/block/' + id, {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            const data = await res.json();
+            showToast(data.blocked ? '🔒 Пользователь заблокирован' : '🔓 Пользователь разблокирован');
+            loadProfile(id);
+        }else{
+            const d = await res.json();
+            showToast('❌ ' + (d.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function reportUser(id){
+    const reason = prompt('Причина жалобы на пользователя:');
+    if(!reason) return;
+    try{
+        const res = await fetch('/api/report-user/' + id, {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ reason })
+        });
+        const data = await res.json();
+        if(res.ok){
+            if(data.autoBanned){
+                showToast('⚠️ Пользователь забанен автоматически (3+ жалоб)');
+            }else{
+                showToast('✅ Жалоба отправлена');
+            }
+        }else if(res.status === 400){
+            showToast('⚠️ Вы уже жаловались');
+        }else{
+            showToast('❌ ' + (data.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+function showAdmin(){
+    if(!user?.isAdmin){
+        showToast('⛔ Доступ запрещен. Только для администраторов.');
+        return;
+    }
+    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
+    document.getElementById('btnAdmin').classList.add('active');
+    document.getElementById('feedPage').classList.add('hidden');
+    document.getElementById('createPage').classList.add('hidden');
+    document.getElementById('profilePage').classList.add('hidden');
+    document.getElementById('adminPage').classList.remove('hidden');
+    loadAdminStats();
+    adminTab('reports');
+}
+
+async function loadAdminStats(){
+    try{
+        const res = await fetch('/api/admin/stats', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const stats = await res.json();
+        document.getElementById('adminStats').innerHTML = `
+            <div class="stat-card"><div class="num">${stats.users}</div><div class="label">👥 Пользователи</div></div>
+            <div class="stat-card"><div class="num">${stats.posts}</div><div class="label">📸 Посты</div></div>
+            <div class="stat-card"><div class="num">${stats.reports}</div><div class="label">📢 Жалобы на посты</div></div>
+            <div class="stat-card"><div class="num">${stats.reportsUser || 0}</div><div class="label">👤 Жалобы на пользователей</div></div>
+            <div class="stat-card"><div class="num">${stats.banned}</div><div class="label">🚫 Забанено</div></div>
+            <div class="stat-card"><div class="num">${stats.comments}</div><div class="label">💬 Комментарии</div></div>
+        `;
+    }catch(e){}
+}
+
+function adminTab(tab){
+    document.querySelectorAll('.admin-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+    const btns = document.querySelectorAll('.admin-tabs .tab-btn');
+    const tabMap = { 'reports': 0, 'reports-user': 1, 'users': 2, 'posts': 3 };
+    if(btns[tabMap[tab]]) btns[tabMap[tab]].classList.add('active');
+    
+    if(tab === 'reports') loadAdminReports();
+    else if(tab === 'reports-user') loadAdminReportsUser();
+    else if(tab === 'users') loadAdminUsers();
+    else loadAdminPosts();
+}
+
+async function loadAdminReports(){
+    try{
+        const res = await fetch('/api/admin/reports', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const reports = await res.json();
+        if(!reports || reports.length === 0){
+            document.getElementById('adminContent').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);">✅ Нет активных жалоб</div>';
+            return;
+        }
+        document.getElementById('adminContent').innerHTML = reports.map(r => `
+            <div class="report-item">
+                <div><strong>📢 От:</strong> ${r.reporter?.username || 'Неизвестный'}</div>
+                <div><strong>📝 Причина:</strong> ${r.reason}</div>
+                <div style="background:var(--glass);padding:8px;border-radius:8px;margin:6px 0;">
+                    <div><strong>Пост:</strong> ${r.post?.text || 'Нет текста'}</div>
+                    ${r.post?.media ? `<img src="${r.post.media}" style="max-width:80px;border-radius:6px;margin-top:4px;">` : ''}
+                </div>
+                <div class="actions">
+                    <button class="delete-btn" onclick="resolveReport('${r.id}','delete')">🗑️ Удалить пост</button>
+                    <button class="ignore-btn" onclick="resolveReport('${r.id}','ignore')">👀 Игнорировать</button>
+                </div>
+            </div>
+        `).join('');
+    }catch(e){}
+}
+
+async function loadAdminReportsUser(){
+    try{
+        const res = await fetch('/api/admin/reports-user', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const reports = await res.json();
+        if(!reports || reports.length === 0){
+            document.getElementById('adminContent').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text2);">✅ Нет активных жалоб на пользователей</div>';
+            return;
+        }
+        document.getElementById('adminContent').innerHTML = reports.map(r => `
+            <div class="report-item">
+                <div><strong>📢 От:</strong> ${r.reporter?.username || 'Неизвестный'}</div>
+                <div><strong>👤 На:</strong> ${r.user?.username || 'Неизвестный'}</div>
+                <div><strong>📝 Причина:</strong> ${r.reason}</div>
+                <div class="actions">
+                    <button class="delete-btn" onclick="resolveReportUser('${r.id}','ban')">🔒 Забанить пользователя</button>
+                    <button class="ignore-btn" onclick="resolveReportUser('${r.id}','ignore')">👀 Игнорировать</button>
+                </div>
+            </div>
+        `).join('');
+    }catch(e){}
+}
+
+async function resolveReport(id, action){
+    try{
+        await fetch('/api/admin/reports/' + id + '/resolve', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ action })
+        });
+        loadAdminReports();
+        loadAdminStats();
+        if(action === 'delete') loadFeed();
+        showToast('✅ Жалоба обработана');
+    }catch(e){
+        showToast('❌ Ошибка');
+    }
+}
+
+async function resolveReportUser(id, action){
+    try{
+        await fetch('/api/admin/reports-user/' + id + '/resolve', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ action })
+        });
+        loadAdminReportsUser();
+        loadAdminStats();
+        showToast('✅ Жалоба обработана');
+    }catch(e){
+        showToast('❌ Ошибка');
+    }
+}
+
+async function loadAdminUsers(){
+    try{
+        const res = await fetch('/api/admin/users', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const users = await res.json();
+        document.getElementById('adminContent').innerHTML = `
+            <h3>👥 Пользователи (${users.length})</h3>
+            ${users.map(u => `
+                <div class="admin-item">
+                    <img src="${u.avatar || '/default-avatar.png'}" onerror="this.src='/default-avatar.png'">
+                    <div class="info">
+                        <div class="name">${u.username}${u.isAdmin ? ' 👑' : ''}${u.isBanned ? ' 🚫' : ''}${u.isVerified ? ' ✅' : ''}</div>
+                        <div class="sub">${u.email} • ${u.postCount || 0} постов</div>
+                        ${u.isBanned ? `<div class="sub" style="color:#ff4444;">Забанен до: ${u.banUntil ? new Date(u.banUntil).toLocaleDateString() : 'навсегда'}</div>` : ''}
+                    </div>
+                    <div class="actions">
+                        <button class="verify-btn ${u.isVerified ? 'done' : ''}" onclick="verifyUser('${u.id}')">${u.isVerified ? '✅' : '⬜'}</button>
+                        <button class="ban-btn ${u.isBanned ? 'unban' : ''}" onclick="banUserAdmin('${u.id}')">${u.isBanned ? '🔓' : '🔒'}</button>
+                        ${!u.isAdmin ? `<button class="del-btn" onclick="deleteUserAdmin('${u.id}')">🗑️</button>` : ''}
+                    </div>
+                </div>
+            `).join('')}
+        `;
+    }catch(e){}
+}
+
+async function verifyUser(id){
+    try{
+        await fetch('/api/admin/verify/' + id, {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        loadAdminUsers();
+        showToast('✅ Статус верификации изменен');
+    }catch(e){}
+}
+
+async function banUserAdmin(id){
+    const days = prompt('На сколько дней забанить? (введите число, 0 = навсегда)');
+    if(days === null) return;
+    const reason = prompt('Причина бана:');
+    if(reason === null) return;
+    try{
+        await fetch('/api/admin/ban/' + id, {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ reason, duration: parseInt(days) || 0 })
+        });
+        loadAdminUsers();
+        showToast('✅ Действие выполнено');
+    }catch(e){}
+}
+
+async function deleteUserAdmin(id){
+    if(!confirm('Удалить пользователя?')) return;
+    try{
+        await fetch('/api/admin/users/' + id, {
+            method: 'DELETE',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        loadAdminUsers();
+        showToast('✅ Пользователь удален');
+    }catch(e){}
+}
+
+async function loadAdminPosts(){
+    try{
+        const res = await fetch('/api/admin/posts', {
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        const posts = await res.json();
+        document.getElementById('adminContent').innerHTML = `
+            <h3>📸 Посты (${posts.length})</h3>
+            ${posts.map(p => `
+                <div class="admin-item">
+                    <img src="${p.userAvatar || '/default-avatar.png'}" onerror="this.src='/default-avatar.png'">
+                    <div class="info">
+                        <div class="name">${p.username}</div>
+                        <div class="sub">${p.text || 'Нет текста'} • ❤️ ${p.likesCount || 0}</div>
+                    </div>
+                    <div class="actions">
+                        <button class="del-btn" onclick="deletePost('${p.id}')">🗑️</button>
+                    </div>
+                </div>
+            `).join('')}
+        `;
+    }catch(e){}
+}
+
+function openSettings(){
+    if(!user) return;
+    document.getElementById('settingsModal').classList.add('active');
+    document.getElementById('settingsContent').innerHTML = `
+        <h3>👤 Настройки</h3>
+        
+        <div class="settings-section">
+            <h4>👤 Профиль</h4>
+            <div class="settings-item"><label>Имя пользователя</label><input type="text" id="settingsUsername" value="${user.username}"></div>
+            <div class="settings-item"><label>О себе</label><input type="text" id="settingsBio" value="${user.bio || ''}" placeholder="Расскажите о себе"></div>
+            <div class="settings-item"><label>Аватар</label><label class="file-label" for="settingsAvatar">📸 Выбрать аватар<input type="file" id="settingsAvatar" accept="image/*"></label></div>
+            <div class="settings-item"><label>Баннер</label><label class="file-label" for="settingsBanner">🖼️ Выбрать баннер<input type="file" id="settingsBanner" accept="image/*"></label></div>
+            <button onclick="saveSettings()" class="btn-primary">Сохранить профиль</button>
+        </div>
+        
+        <div class="settings-section">
+            <h4>🔐 Безопасность</h4>
+            <div class="settings-item"><label>Новая почта</label><input type="email" id="settingsEmail" placeholder="Новый email"></div>
+            <div class="settings-item"><label>Пароль для подтверждения</label><input type="password" id="settingsEmailPass" placeholder="Введите пароль"></div>
+            <button onclick="changeEmail()" class="btn-primary">Сменить почту</button>
+            
+            <div class="settings-item" style="margin-top:10px;"><label>Старый пароль</label><input type="password" id="settingsOldPass" placeholder="Старый пароль"></div>
+            <div class="settings-item"><label>Новый пароль</label><input type="password" id="settingsNewPass" placeholder="Новый пароль (мин. 6 символов)"></div>
+            <button onclick="changePassword()" class="btn-primary">Сменить пароль</button>
+        </div>
+        
+        <button onclick="logout()" class="logout-btn">🚪 Выйти</button>
+        <button onclick="deleteAccount()" class="delete-account-btn">🗑️ Удалить аккаунт</button>
+    `;
+}
+
+function closeSettings(){
+    document.getElementById('settingsModal').classList.remove('active');
+}
+
+async function saveSettings(){
+    const username = document.getElementById('settingsUsername').value;
+    const bio = document.getElementById('settingsBio').value;
+    const avatar = document.getElementById('settingsAvatar').files[0];
+    const banner = document.getElementById('settingsBanner').files[0];
+    const fd = new FormData();
+    fd.append('username', username);
+    fd.append('bio', bio);
+    if(avatar) fd.append('avatar', avatar);
+    if(banner) fd.append('banner', banner);
+    try{
+        const res = await fetch('/api/update-profile', {
+            method: 'POST',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include',
+            body: fd
+        });
+        const data = await res.json();
+        if(res.ok){
+            user = data.user;
+            document.getElementById('btnAuth').textContent = '👤 ' + user.username;
+            showToast('✅ Профиль обновлен!');
+            closeSettings();
+        }else{
+            showToast('❌ ' + (data.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function changePassword(){
+    const oldPass = document.getElementById('settingsOldPass').value;
+    const newPass = document.getElementById('settingsNewPass').value;
+    if(!oldPass || !newPass) return showToast('❌ Заполните все поля');
+    if(newPass.length < 6) return showToast('❌ Пароль минимум 6 символов');
+    try{
+        const res = await fetch('/api/change-password', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ oldPassword: oldPass, newPassword: newPass })
+        });
+        const data = await res.json();
+        if(res.ok){
+            showToast('✅ Пароль изменен!');
+            document.getElementById('settingsOldPass').value = '';
+            document.getElementById('settingsNewPass').value = '';
+        }else{
+            showToast('❌ ' + (data.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function changeEmail(){
+    const newEmail = document.getElementById('settingsEmail').value;
+    const password = document.getElementById('settingsEmailPass').value;
+    if(!newEmail || !password) return showToast('❌ Заполните все поля');
+    try{
+        const res = await fetch('/api/change-email', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ newEmail, password })
+        });
+        const data = await res.json();
+        if(res.ok){
+            showToast('✅ Почта изменена!');
+            document.getElementById('settingsEmail').value = '';
+            document.getElementById('settingsEmailPass').value = '';
+        }else{
+            showToast('❌ ' + (data.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+
+async function deleteAccount(){
+    if(!confirm('Вы уверены? Это необратимо!')) return;
+    try{
+        const res = await fetch('/api/delete-account', {
+            method: 'DELETE',
+            headers: { 'Authorization': 'Bearer ' + token },
+            credentials: 'include'
+        });
+        if(res.ok){
+            showToast('✅ Аккаунт удален');
+            logout();
+        }else{
+            const d = await res.json();
+            showToast('❌ ' + (d.error || 'Ошибка'));
+        }
+    }catch(e){
+        showToast('❌ Ошибка соединения');
+    }
+}
+</script>
+</body>
+</html>

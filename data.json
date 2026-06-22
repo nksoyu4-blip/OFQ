@@ -1,0 +1,1041 @@
+{
+  "users": [
+    {
+      "id": "admin-001",
+      "username": "1kz",
+      "email": "admin@ofq.com",
+      "password": "$2a$10$PxSTr0Ilj3s/l5Jx.zqvIO.jmUQv3uuQD5T.7OwFrVarTPH0Gwx3O",
+      "avatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "bio": "I'm Creator???",
+      "isAdmin": true,
+      "isVerified": true,
+      "isBanned": false,
+      "createdAt": "2026-06-18T05:17:18.334Z",
+      "banner": "/uploads/avatars/1781884847001-309053776.jpg"
+    },
+    {
+      "id": "cf8cd87a-ab99-4318-99d2-3a4f5f53cdcd",
+      "username": "Хуеглот",
+      "email": "nferanf@yandex.ru",
+      "password": "$2a$10$zQTZtKnf8p1Y89jIU./I8.SlgFiy3qwFlrjE32IEpy9/GmZfqN9Uy",
+      "avatar": "/uploads/avatars/1781784858529-539722439.jpg",
+      "banner": "/uploads/avatars/1781784859481-864469028.jpg",
+      "bio": "Сын гей порно",
+      "isAdmin": false,
+      "isVerified": false,
+      "isBanned": false,
+      "createdAt": "2026-06-18T12:14:19.855Z"
+    },
+    {
+      "id": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "username": "ArtemchikDEVY",
+      "email": "artem.kalianov.14@gmail.com",
+      "password": "$2a$10$fqaiVK/HHuY2E4Ab10rjjOttF15ra9uDI55nMwwx4LmOCzzxounx2",
+      "avatar": "/uploads/avatars/1781798864806-38124804.png",
+      "banner": "/uploads/avatars/1781798865577-143138230.jpg",
+      "bio": "Simply, a dev.",
+      "isAdmin": false,
+      "isVerified": true,
+      "isBanned": false,
+      "createdAt": "2026-06-18T16:07:46.316Z"
+    },
+    {
+      "id": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "username": "minty",
+      "email": "minty.fb",
+      "password": "$2a$10$iDN125niM6ycbDxn9bmj3u3h6I2K2LLadiTV0qfVuk6SLtRjZRIt6",
+      "avatar": "/uploads/avatars/1781868869507-594567.jfif",
+      "banner": "/uploads/avatars/1781868869760-814601863.jfif",
+      "bio": "",
+      "isAdmin": false,
+      "isVerified": false,
+      "isBanned": false,
+      "createdAt": "2026-06-19T11:34:29.890Z"
+    },
+    {
+      "id": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "username": "Love",
+      "email": "asofq@.com",
+      "password": "$2a$10$H50pYFfcuIjNA1e.x8UZtO9XU2pYyKAD6oykvl0P8Dk4eWPViXuzW",
+      "avatar": "/uploads/avatars/1781893050305-173900503.jpg",
+      "banner": "/uploads/avatars/1781893051103-553732605.jpg",
+      "bio": "❤",
+      "isAdmin": false,
+      "isVerified": false,
+      "isBanned": false,
+      "createdAt": "2026-06-19T18:17:31.814Z"
+    },
+    {
+      "id": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "username": "Povzer",
+      "email": "test@ofq.com",
+      "password": "$2a$10$riKMUuuYljfze9PGZ.fYRe/L7SkwnzCv4ROMXY5wMGKi/0rnYGmci",
+      "avatar": "/uploads/avatars/1782122587698-919493708.jpg",
+      "banner": "/uploads/avatars/1782122588243-348462516.jpg",
+      "bio": "",
+      "isAdmin": false,
+      "isVerified": false,
+      "isBanned": false,
+      "createdAt": "2026-06-22T10:03:08.449Z"
+    },
+    {
+      "id": "d51ef72d-c2e0-437a-8e89-a13d2ff02c17",
+      "username": "OFQ",
+      "email": "OFQ.gmail.com",
+      "password": "$2a$10$tr8nOqTvyHFpYaRMhDRp6eVADG6WkkSn7ueQ10RIb31yjmVTqDjmO",
+      "avatar": "/uploads/avatars/1782131799471-57508588.png",
+      "banner": "/uploads/avatars/1782131799919-716134478.png",
+      "bio": "",
+      "isAdmin": false,
+      "isVerified": true,
+      "isBanned": false,
+      "createdAt": "2026-06-22T12:36:40.333Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "f124cd04-c7d3-4a21-9f9a-ecc493ea982c",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "посты сдохли:(",
+      "media": null,
+      "mediaType": null,
+      "type": "text",
+      "createdAt": "2026-06-22T13:37:38.011Z"
+    },
+    {
+      "id": "004e4634-e15e-4496-8085-9bbec2713758",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "username": "Povzer",
+      "userAvatar": "/uploads/avatars/1782122587698-919493708.jpg",
+      "text": ":z",
+      "media": null,
+      "mediaType": null,
+      "type": "text",
+      "createdAt": "2026-06-22T10:05:32.376Z"
+    },
+    {
+      "id": "d72986b7-968e-4121-a563-38185c4809b0",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "Всем привет обнова скоро еще пойду во что то поиграю и запостим ",
+      "media": "/uploads/posts/1781932627647-926182351.jpg",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-20T05:17:14.175Z"
+    },
+    {
+      "id": "a7770fcf-2ecd-4e6d-b4d4-4ef02508a05d",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "кстати посты с телефона как вам?\r\nи телефонная версия вышла и мессенджер под нее сделан;)",
+      "media": "/uploads/posts/1781897014237-604663875.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T19:23:34.982Z"
+    },
+    {
+      "id": "63d6ad29-b6ed-4951-b758-32404687670a",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "🔄 Репост @Love: Всем 👋",
+      "media": null,
+      "mediaType": null,
+      "type": "text",
+      "originalPostId": "969843ba-fbcc-45de-bd5b-98bc57feebef",
+      "isRepost": true,
+      "createdAt": "2026-06-19T18:26:59.398Z"
+    },
+    {
+      "id": "969843ba-fbcc-45de-bd5b-98bc57feebef",
+      "userId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "username": "Love",
+      "userAvatar": "/uploads/avatars/1781893050305-173900503.jpg",
+      "text": "Всем 👋",
+      "media": null,
+      "mediaType": null,
+      "type": "text",
+      "createdAt": "2026-06-19T18:19:54.169Z"
+    },
+    {
+      "id": "bd409ab2-18d3-4c9f-980f-662a561848a5",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "АХАХХАХ что это?",
+      "media": "/uploads/posts/1781891884815-388372777.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T17:58:06.021Z"
+    },
+    {
+      "id": "54897f8d-953a-47dc-a714-31fa2c74ebe3",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "АХАХАХ в майн гоняем:)",
+      "media": "/uploads/posts/1781889116198-68891564.jpg",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T17:11:56.669Z"
+    },
+    {
+      "id": "a6515fff-f63d-47f7-b5e2-6f3f5fc40a62",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "красиво:(",
+      "media": "/uploads/posts/1781879730914-979325377.jpg",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T14:35:40.978Z"
+    },
+    {
+      "id": "038959dc-087c-4652-8364-d8ae960e16d6",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "УРАААА",
+      "media": "/uploads/posts/1781871009015-441561471.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T12:10:09.017Z"
+    },
+    {
+      "id": "0202441c-f3cc-40be-975b-807294048e53",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "username": "minty",
+      "userAvatar": "/uploads/avatars/1781868869507-594567.jfif",
+      "text": "",
+      "media": "/uploads/posts/1781869107015-872978325.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T11:38:27.016Z"
+    },
+    {
+      "id": "be8d3024-8d7c-44ca-91db-da9a1d99cd42",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "username": "minty",
+      "userAvatar": "/uploads/avatars/1781868869507-594567.jfif",
+      "text": "",
+      "media": "/uploads/posts/1781868974753-938138023.jfif",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T11:36:14.756Z"
+    },
+    {
+      "id": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "???",
+      "media": "/uploads/posts/1781865836511-638525825.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-19T10:43:57.073Z"
+    },
+    {
+      "id": "10d57591-e743-461e-8d6e-ba75480e05ef",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "media": "/uploads/videos/1781799975384-475781718.mp4",
+      "mediaType": "video",
+      "type": "image",
+      "createdAt": "2026-06-18T16:26:18.459Z"
+    },
+    {
+      "id": "8f4c03c9-fa36-4957-b6f8-38677e78b021",
+      "userId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "username": "ArtemchikDEVY",
+      "userAvatar": "/uploads/avatars/1781798864806-38124804.png",
+      "text": "пау пау",
+      "media": "/uploads/posts/1781799185981-557942044.png",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-18T16:13:05.983Z"
+    },
+    {
+      "id": "04452ee1-7235-471c-a031-0c5c6b25e130",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "media": "/uploads/videos/1781786443492-321522673.mp4",
+      "mediaType": "video",
+      "type": "image",
+      "createdAt": "2026-06-18T12:40:46.048Z"
+    },
+    {
+      "id": "635723e2-962d-4773-a389-0457459beeaa",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "я тут:(",
+      "media": "/uploads/posts/1781785467102-541100029.jpg",
+      "mediaType": "image",
+      "type": "image",
+      "createdAt": "2026-06-18T12:24:27.103Z"
+    },
+    {
+      "id": "65fe69d4-c12e-4aed-94db-e4e45d2640c7",
+      "userId": "cf8cd87a-ab99-4318-99d2-3a4f5f53cdcd",
+      "username": "Хуеглот",
+      "userAvatar": "/uploads/avatars/1781784858529-539722439.jpg",
+      "text": "🔄 Репост @Хуеглот: ",
+      "media": "/uploads/videos/1781785008987-673027597.mp4",
+      "mediaType": "video",
+      "type": "text",
+      "originalPostId": "2154e3d5-023c-44ea-8f1a-10450b553b3c",
+      "isRepost": true,
+      "createdAt": "2026-06-18T12:16:57.038Z"
+    },
+    {
+      "id": "2bffb0b6-990f-429f-a6bc-efca3d51895d",
+      "userId": "cf8cd87a-ab99-4318-99d2-3a4f5f53cdcd",
+      "username": "Хуеглот",
+      "userAvatar": "/uploads/avatars/1781784858529-539722439.jpg",
+      "text": "",
+      "media": "/uploads/videos/1781784951496-989997890.mp4",
+      "mediaType": "video",
+      "type": "text",
+      "createdAt": "2026-06-18T12:15:52.826Z"
+    }
+  ],
+  "likes": [
+    {
+      "postId": "2bffb0b6-990f-429f-a6bc-efca3d51895d",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "65fe69d4-c12e-4aed-94db-e4e45d2640c7",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "8f4c03c9-fa36-4957-b6f8-38677e78b021",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "be8d3024-8d7c-44ca-91db-da9a1d99cd42",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "be8d3024-8d7c-44ca-91db-da9a1d99cd42",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d"
+    },
+    {
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d"
+    },
+    {
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "0202441c-f3cc-40be-975b-807294048e53",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "038959dc-087c-4652-8364-d8ae960e16d6",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "bd409ab2-18d3-4c9f-980f-662a561848a5",
+      "userId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a"
+    },
+    {
+      "postId": "969843ba-fbcc-45de-bd5b-98bc57feebef",
+      "userId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a"
+    },
+    {
+      "postId": "969843ba-fbcc-45de-bd5b-98bc57feebef",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "63d6ad29-b6ed-4951-b758-32404687670a",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "63d6ad29-b6ed-4951-b758-32404687670a",
+      "userId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a"
+    },
+    {
+      "postId": "54897f8d-953a-47dc-a714-31fa2c74ebe3",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "a7770fcf-2ecd-4e6d-b4d4-4ef02508a05d",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52"
+    },
+    {
+      "postId": "10d57591-e743-461e-8d6e-ba75480e05ef",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52"
+    },
+    {
+      "postId": "635723e2-962d-4773-a389-0457459beeaa",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52"
+    },
+    {
+      "postId": "2bffb0b6-990f-429f-a6bc-efca3d51895d",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52"
+    },
+    {
+      "postId": "004e4634-e15e-4496-8085-9bbec2713758",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "a7770fcf-2ecd-4e6d-b4d4-4ef02508a05d",
+      "userId": "admin-001"
+    },
+    {
+      "postId": "d72986b7-968e-4121-a563-38185c4809b0",
+      "userId": "admin-001"
+    }
+  ],
+  "comments": [
+    {
+      "id": "f93d9e4d-5864-4916-a784-a58f8495f853",
+      "postId": "65fe69d4-c12e-4aed-94db-e4e45d2640c7",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "Пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-18T12:36:41.815Z"
+    },
+    {
+      "id": "c7676c3d-3c8a-4db6-83ee-8698c51e6803",
+      "postId": "65fe69d4-c12e-4aed-94db-e4e45d2640c7",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "file": "/uploads/comments/1781786211547-7218215.mp4",
+      "fileType": "video",
+      "createdAt": "2026-06-18T12:36:52.753Z"
+    },
+    {
+      "id": "b368ba6a-6d64-4eac-b68f-44b868a0b435",
+      "postId": "2bffb0b6-990f-429f-a6bc-efca3d51895d",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "file": "/uploads/comments/1781786360468-971207396.jpg",
+      "fileType": "image",
+      "createdAt": "2026-06-18T12:39:21.146Z"
+    },
+    {
+      "id": "8c2f4556-991a-4dc1-9c28-ae6ed541509e",
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "username": "minty",
+      "userAvatar": "/uploads/avatars/1781868869507-594567.jfif",
+      "text": "",
+      "file": "/uploads/comments/1781869074813-366473830.mp3",
+      "fileType": "audio",
+      "createdAt": "2026-06-19T11:37:55.085Z"
+    },
+    {
+      "id": "c3ff2fc1-c8fa-4866-b423-420016a03620",
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "username": "minty",
+      "userAvatar": "/uploads/avatars/1781868869507-594567.jfif",
+      "text": "s",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:07.250Z"
+    },
+    {
+      "id": "7f1ebf10-83d5-41c6-a57c-00a09a0ee2d5",
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "file": "/uploads/comments/1781869806286-133296539.wav",
+      "fileType": "audio",
+      "createdAt": "2026-06-19T11:50:06.287Z"
+    },
+    {
+      "id": "5dcdb48b-109b-42fb-9d1e-9c5fe9c57f57",
+      "postId": "d6fa28f6-e250-4e37-9d62-0217241db490",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "",
+      "file": "/uploads/comments/1781869816872-355090488.mp4",
+      "fileType": "video",
+      "createdAt": "2026-06-19T11:50:18.884Z"
+    },
+    {
+      "id": "3fb44668-e145-4ea5-bafb-73749266fe0a",
+      "postId": "0202441c-f3cc-40be-975b-807294048e53",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": "злая скрепка обидили",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T19:24:25.600Z"
+    },
+    {
+      "id": "1139c050-e2fa-4c01-af71-db29bc0fce6d",
+      "postId": "8f4c03c9-fa36-4957-b6f8-38677e78b021",
+      "userId": "admin-001",
+      "username": "1kz",
+      "userAvatar": "/uploads/avatars/1781778114603-813827759.jpg",
+      "text": ":(",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-20T05:14:01.129Z"
+    },
+    {
+      "id": "e52eb74d-f2a5-44c6-85b0-06cd41b93dc8",
+      "postId": "2bffb0b6-990f-429f-a6bc-efca3d51895d",
+      "userId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "username": "Povzer",
+      "userAvatar": "/uploads/avatars/1782122587698-919493708.jpg",
+      "text": ":(",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-22T10:19:30.371Z"
+    }
+  ],
+  "follows": [
+    {
+      "followerId": "admin-001",
+      "followingId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "createdAt": "2026-06-19T11:16:53.294Z"
+    },
+    {
+      "followerId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "followingId": "admin-001",
+      "createdAt": "2026-06-19T11:19:00.677Z"
+    },
+    {
+      "followerId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "followingId": "cf8cd87a-ab99-4318-99d2-3a4f5f53cdcd",
+      "createdAt": "2026-06-19T11:36:58.864Z"
+    },
+    {
+      "followerId": "admin-001",
+      "followingId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "createdAt": "2026-06-19T11:37:48.573Z"
+    },
+    {
+      "followerId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "followingId": "admin-001",
+      "createdAt": "2026-06-19T11:38:31.702Z"
+    },
+    {
+      "followerId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "followingId": "admin-001",
+      "createdAt": "2026-06-19T18:18:21.270Z"
+    },
+    {
+      "followerId": "admin-001",
+      "followingId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "createdAt": "2026-06-19T18:20:17.289Z"
+    },
+    {
+      "followerId": "admin-001",
+      "followingId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "createdAt": "2026-06-22T10:11:18.696Z"
+    },
+    {
+      "followerId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "followingId": "admin-001",
+      "createdAt": "2026-06-22T10:12:24.723Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "7581f403-f557-47f7-83de-180c52e6fdd8",
+      "postId": "d7f01e01-d1f5-4c70-9f17-e64f58863372",
+      "reporterId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "reason": "расизм, оскорбление,18+",
+      "createdAt": "2026-06-22T10:18:04.133Z",
+      "resolved": true
+    }
+  ],
+  "blozdaMessages": [
+    {
+      "id": "3b775831-efbf-4b36-afd9-da04ddce3281",
+      "fromId": "admin-001",
+      "toId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "text": "Привет",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:17:07.063Z",
+      "read": false
+    },
+    {
+      "id": "ef4ad967-8966-4e33-8a1f-989d2ca7ad96",
+      "fromId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "toId": "admin-001",
+      "text": "пыдар",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:20:32.190Z",
+      "read": false
+    },
+    {
+      "id": "c6f6109f-edcb-4a38-89f5-c27f5dc63eae",
+      "fromId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "toId": "admin-001",
+      "text": "иди нахуй сын шлюхи ❤️",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:20:50.202Z",
+      "read": false
+    },
+    {
+      "id": "51a9ce60-4163-45f7-ad5e-043b920471db",
+      "fromId": "admin-001",
+      "toId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "text": "Я пикнул",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:21:11.802Z",
+      "read": false
+    },
+    {
+      "id": "91ce7ddc-9626-410f-adfc-47bb31d4d089",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "Хелло герл",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:00.649Z",
+      "read": false
+    },
+    {
+      "id": "355e8e70-2af2-4125-a2fb-0801676a4a44",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "hai",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:37.782Z",
+      "read": false
+    },
+    {
+      "id": "297216dc-6708-4d0b-80bd-f019212fe18d",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "вот сью найм",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:43.047Z",
+      "read": false
+    },
+    {
+      "id": "359fc618-4cf7-4324-a7bb-3dc5e866ff5e",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "?",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:43.934Z",
+      "read": false
+    },
+    {
+      "id": "414c02de-3402-431b-8f9a-9f0eb8ad8306",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "my name is pidor",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:47.249Z",
+      "read": false
+    },
+    {
+      "id": "d14d3090-d02f-4636-aebd-ad8467d67c0b",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "ОО гей нейм",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:53.477Z",
+      "read": false
+    },
+    {
+      "id": "8fdc211c-f54d-45f2-bcbb-c02899f831f7",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "вотсью нимбер",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:38:57.679Z",
+      "read": false
+    },
+    {
+      "id": "b95f4a68-cf52-483a-b9ff-81d3b033bcd8",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "май номер",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:04.134Z",
+      "read": false
+    },
+    {
+      "id": "a2b4639d-64bf-45c7-a342-b19f3ffedef0",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "ЕЗ",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:09.241Z",
+      "read": false
+    },
+    {
+      "id": "dcc7f63f-d817-4d01-a82c-c0eb886c28cd",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "69",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:10.471Z",
+      "read": false
+    },
+    {
+      "id": "3f9f6bf3-7de3-458a-bfa4-10ed09977b5a",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "Что 69",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:15.139Z",
+      "read": false
+    },
+    {
+      "id": "5c62dc6a-6f59-4d28-995c-d7cbdc6d0c5e",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "е",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:17.262Z",
+      "read": false
+    },
+    {
+      "id": "93df7d8c-d205-421f-8e44-c430d4d8a9e6",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "с",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:19.078Z",
+      "read": false
+    },
+    {
+      "id": "7c053d94-b431-4994-803d-4d048dbb25de",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "АААААААА",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:21.750Z",
+      "read": false
+    },
+    {
+      "id": "7afeba5e-8cb1-49ab-8684-7068e717af52",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "БАБАЙКА",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:25.090Z",
+      "read": false
+    },
+    {
+      "id": "91d62a19-e956-4761-9e2c-99d9f9a3177d",
+      "fromId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "toId": "admin-001",
+      "text": "фывфыв",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T11:39:39.586Z",
+      "read": false
+    },
+    {
+      "id": "05843138-e5fe-4739-a273-2b9bd84a6605",
+      "fromId": "admin-001",
+      "toId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "text": "",
+      "file": "/uploads/chat/1781870715696-640106072.jpg",
+      "fileType": "image",
+      "createdAt": "2026-06-19T12:05:15.920Z",
+      "read": false
+    },
+    {
+      "id": "859fe00b-e55d-4c96-b232-025a803eddef",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T14:34:54.247Z",
+      "read": false
+    },
+    {
+      "id": "5a04b742-5630-435d-8005-d36a3d005f6d",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T17:12:14.980Z",
+      "read": false
+    },
+    {
+      "id": "2c5dd0ba-5a75-4377-9d8f-b5fb96cd2365",
+      "fromId": "admin-001",
+      "toId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "text": "пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T17:16:04.683Z",
+      "read": false
+    },
+    {
+      "id": "d8b12e2f-2620-4015-bb23-bde5f592e8c4",
+      "fromId": "admin-001",
+      "toId": "bb77c85e-f930-4e78-acd0-0fdcdbfa1de1",
+      "text": "",
+      "file": "/uploads/voice/1781889533452-965299989.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T17:18:53.455Z",
+      "read": false
+    },
+    {
+      "id": "f4b736d6-7709-4396-bdc8-028eb77a2bbc",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T18:21:52.971Z",
+      "read": false
+    },
+    {
+      "id": "a6cf6ea4-aacd-44c8-a308-236d06a18c75",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "",
+      "file": "/uploads/voice/1781893329070-618558555.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T18:22:09.988Z",
+      "read": false
+    },
+    {
+      "id": "f2deee77-4880-42d1-9a74-6e4ad55e5ab7",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "",
+      "file": "/uploads/voice/1781893357203-953293789.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T18:22:41.543Z",
+      "read": false
+    },
+    {
+      "id": "3d70994c-f133-45bd-a39e-bffc49e82734",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "",
+      "file": "/uploads/voice/1781893362031-111316736.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T18:22:42.205Z",
+      "read": false
+    },
+    {
+      "id": "bf649474-822e-462f-80ec-5ed84f10e5bc",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "Pr",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T18:26:29.454Z",
+      "read": false
+    },
+    {
+      "id": "8038ebe7-40da-48a2-b913-81afefbd1fab",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "Пр",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T18:45:17.381Z",
+      "read": false
+    },
+    {
+      "id": "3834bffb-9471-49ff-aea1-b82e6426bc48",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "Ммм",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T18:54:23.945Z",
+      "read": false
+    },
+    {
+      "id": "3d09e6dc-c36d-4566-a6f4-3b19fd23c205",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "Эаа",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T18:54:35.525Z",
+      "read": false
+    },
+    {
+      "id": "3f248b52-a569-4acb-870f-54e1663f7625",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "",
+      "file": "/uploads/voice/1781895354378-61259805.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T18:55:54.677Z",
+      "read": false
+    },
+    {
+      "id": "28bb32f2-a040-4f50-9189-372c3439dcb2",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "",
+      "file": "/uploads/chat/1781895414426-600072739.jpg",
+      "fileType": "image",
+      "createdAt": "2026-06-19T18:56:54.807Z",
+      "read": false
+    },
+    {
+      "id": "2a7d4887-b416-43a5-8db9-d01ceed1917b",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "",
+      "file": "/uploads/voice/1781896395518-595084912.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T19:13:16.291Z",
+      "read": false
+    },
+    {
+      "id": "4842d8bb-0c98-4cbf-afe8-0a9db28d622e",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "",
+      "file": "/uploads/voice/1781896399741-934150807.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T19:13:19.793Z",
+      "read": false
+    },
+    {
+      "id": "35233d74-e2ea-4abd-a657-b5ec1d8b8aca",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "",
+      "file": "/uploads/voice/1781896426310-258116985.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T19:13:48.513Z",
+      "read": false
+    },
+    {
+      "id": "d094ab6a-b9cc-4786-ad80-5a281d0ef453",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "Привет",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T19:13:55.777Z",
+      "read": false
+    },
+    {
+      "id": "d60a1dbd-33c2-4f4b-8ec6-5063dfb9bd4b",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "привет ждешь обнову с норм гс и со зв?",
+      "file": null,
+      "fileType": null,
+      "createdAt": "2026-06-19T19:24:58.064Z",
+      "read": false
+    },
+    {
+      "id": "a816bee2-2d7d-48bd-8ee2-525cce1ce105",
+      "fromId": "admin-001",
+      "toId": "204a40ac-9ba8-4668-8653-cba2499e375d",
+      "text": "",
+      "file": "/uploads/voice/1781897147002-719161198.webm",
+      "fileType": "voice",
+      "createdAt": "2026-06-19T19:25:48.055Z",
+      "read": false
+    },
+    {
+      "id": "29572c29-f547-4635-bdc4-bde87cb2b3b8",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "🎤 Голосовое сообщение",
+      "file": "/uploads/chat/1781949461251-855626845.webm",
+      "fileType": "audio",
+      "createdAt": "2026-06-20T09:57:41.553Z",
+      "read": false
+    },
+    {
+      "id": "80a6bea2-ad9b-485d-896e-0267977314ce",
+      "fromId": "admin-001",
+      "toId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "text": "🎤 Голосовое сообщение",
+      "file": "/uploads/chat/1781949470476-244366512.webm",
+      "fileType": "audio",
+      "createdAt": "2026-06-20T09:57:50.807Z",
+      "read": false
+    },
+    {
+      "id": "842b27c0-6b84-45e4-a024-c533353128e1",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "🎤 Голосовое сообщение",
+      "file": "/uploads/chat/1781950345019-487888765.webm",
+      "fileType": "audio",
+      "createdAt": "2026-06-20T10:12:25.816Z",
+      "read": false
+    },
+    {
+      "id": "494bb6f7-7728-4020-a1ad-8eb8d6a1595a",
+      "fromId": "dc7ffb9d-66b3-4a65-87f5-aa4cca09585a",
+      "toId": "admin-001",
+      "text": "🎤 Голосовое сообщение",
+      "file": "/uploads/chat/1781950871826-424407266.webm",
+      "fileType": "audio",
+      "createdAt": "2026-06-20T10:21:12.092Z",
+      "read": false
+    },
+    {
+      "id": "686302b6-7338-4c49-86a0-5de6d014095a",
+      "fromId": "admin-001",
+      "toId": "5884f917-9e84-4c7c-adb9-8eb45ca4be52",
+      "text": "📤 Пересланный пост от @1kz: ???",
+      "file": "/uploads/videos/1782136423540-938964848.mp4",
+      "fileType": "video",
+      "forwardedPost": {
+        "id": "4ab0a551-13ff-4bc8-b534-dd3dbfc392d1",
+        "text": "???",
+        "media": "/uploads/videos/1782136423540-938964848.mp4",
+        "mediaType": "video",
+        "username": "1kz"
+      },
+      "createdAt": "2026-06-22T13:54:29.059Z",
+      "read": false
+    }
+  ],
+  "reportsUser": [],
+  "pinnedPosts": [],
+  "blockedUsers": []
+}
